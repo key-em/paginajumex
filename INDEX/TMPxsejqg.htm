@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<style type="text/css">
+
+#apDiv1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 2px;
+	top: -1px;
+}
+#apDiv2 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:2;
+	left: 90px;
+	top: 79px;
+}
+
+</style>
+<link rel="stylesheet" title="Desactivado para vista previa en navegador: ../CSS/estil1.css" type="text/css" />
+<style type="text/css">
+
+
+/* CSS Document */
+
+body{
+	background:#000;
+	background-image:url(../imagenes/FONDO.jpg)
+}
+.titulo{
+	text-align:center;
+	font-size:40px;
+	padding-top:50px;
+}
+.slider-box{
+	width:1200px;
+	height:auto;
+	margin:50px auto 0;
+	overflow:hidden;
+}
+.slider-box ul{
+	display:flex;
+	padding:0;
+	width:300%;
+	animation:slide 20s infinite alternate ease-in-out;
+}
+.slider-box li{
+	width:100%;
+	list-style:none;
+	position:relative;
+}
+.texto{
+	position:absolute;
+	text-align:center;
+	padding:0 250px;
+	top:162px;
+	color:#FFF;
+	left: 360px;
+}
+.texto h2{
+	font-size:40px;
+	margin-bottom:35px;
+}
+
+.slider-box img{
+	width:100%;
+}
+@keyframes slide{
+	0%{margin-left:0;}
+	20%{margin-left:0;}
+	
+	25%{margin-left:-100%}
+	45%{margin-left:-100%}
+	
+	50%{margin-left:-200%}
+	70%{margin-left:-200%}
+}
+.apDiv9{
+border-radius:50%;
+width:200px;
+height:200px;
+opacity:0.9;
+border-color:#FF0000;
+}
+:root{
+    --color-barra-lateral:rgb(255, 195, 0);
+
+    --color-texto:rgb(0,0,0);
+    --color-texto-menu:rgb(134,136,144);
+
+    --color-menu-hover:rgb(238,238,238);
+    --color-menu-hover-texto:rgb(0,0,0);
+
+    --color-boton:rgb(0,0,0);
+    --color-boton-texto:rgb(255,255,255);
+
+    --color-linea:rgb(180,180,180);
+
+    --color-switch-base :rgb(201,202,206);
+    --color-switch-circulo:rgb(241,241,241);
+
+    --color-scroll:rgb(192,192,192);
+    --color-scroll-hover:rgb(134,134,134);
+}
+
+.dark-mode{
+    --color-barra-lateral:rgb(44,45,49);
+
+    --color-texto:rgb(255,255,255);
+    --color-texto-menu:rgb(110,110,117);
+
+    --color-menu-hover:rgb(0,0,0);
+    --color-menu-hover-texto:rgb(238,238,238);
+
+    --color-boton:rgb(255,255,255);
+    --color-boton-texto:rgb(0,0,0);
+
+    --color-linea:rgb(90,90,90);
+
+    --color-switch-base :rgb(39,205,64);
+    --color-switch-circulo:rgb(255,255,255);
+
+    --color-scroll:rgb(68,69,74);
+    --color-scroll-hover:rgb(85,85,85);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: darkcyan;
+}
+
+/*-----------------Menu*/
+.menu{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+
+
+/*----------------Barra Lateral*/
+.barra-lateral{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color-barra-lateral);
+    transition: width 0.5s ease,background-color 0.3s ease,left 0.5s ease;
+    z-index: 50;
+}
+
+.mini-barra-lateral{
+    width: 80px;
+}
+.barra-lateral span{
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease,width 0.5s ease;
+}
+.barra-lateral span.oculto{
+    opacity: 0;
+    width: 0;
+}
+
+/*---------- Nombre de la página */
+.barra-lateral .nombre-pagina{
+    width: 100%;
+    height: 45px;
+    color: var(--color-texto);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+.barra-lateral .nombre-pagina ion-icon{
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.barra-lateral .nombre-pagina span{
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+
+.barra-lateral .boton ion-icon{
+    min-width: 50px;
+    font-size: 25px;
+}
+
+
+/*------------ Menu Navegación*/
+.barra-lateral .navegacion{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.barra-lateral .navegacion::-webkit-scrollbar{
+    width: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb{
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover{
+    background-color: var(--color-scroll-hover);
+}
+.barra-lateral .navegacion li{  
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+.barra-lateral .navegacion a{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-texto-menu);
+}
+.barra-lateral .navegacion a:hover{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+.barra-lateral .navegacion ion-icon{
+    min-width: 50px;
+    font-size: 20px;
+}
+
+/*--------------- Linea*/
+.barra-lateral .linea{
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    background-color: var(--color-linea);
+}
+
+/*-------------- Modo Oscuro*/
+.barra-lateral .modo-oscuro{
+    width: 100%;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-lateral .modo-oscuro .info{
+    width: 150px;
+    height: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-menu);
+}
+.barra-lateral .modo-oscuro ion-icon{
+
+    width: 50px;
+    font-size: 20px;
+}
+
+/*-switch*/
+.barra-lateral .modo-oscuro .switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+.barra-lateral .modo-oscuro .base{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+}
+.barra-lateral .modo-oscuro .circulo{
+    position: absolute;
+    width: 18px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    left: 2px;
+    transition: left 0.5s ease;
+}
+.barra-lateral .modo-oscuro .circulo.prendido{
+    left: 15px;
+}
+
+/*------------- Usuario*/
+.barra-lateral .usuario{
+    width: 100%;
+    display: flex;
+}
+.barra-lateral .usuario img{
+    width: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+.barra-lateral .usuario .info-usuario{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-texto);
+    overflow: hidden;
+}
+.barra-lateral .usuario .nombre-email{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.barra-lateral .usuario .nombre{
+    font-size: 15px;
+    font-weight: 600;
+}
+.barra-lateral .usuario .email{
+    font-size: 13px;
+}
+.barra-lateral .usuario ion-icon{
+    font-size: 20px;
+}
+
+
+/*-------------main*/
+
+#inbox{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+main{
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.5s ease;
+}
+main.min-main{
+    margin-left: 80px;
+}
+
+
+
+/*---------------- Responsive*/
+@media (max-height: 660px){
+    .barra-lateral .nombre-pagina{
+        margin-bottom: 5px;
+    }
+    .barra-lateral .modo-oscuro{
+        margin-bottom: 3px;
+    }
+}
+@media (max-width: 600px){
+    .barra-lateral{
+        position: fixed;
+        left: -250px;
+    }
+    .max-barra-lateral{
+        left: 0;
+    }
+    .menu{
+        display: flex;
+    }
+    .menu ion-icon:nth-child(2){
+        display: none;
+    }
+    main{
+        margin-left: 0;
+    }
+    main.min-main{
+        margin-left: 0;
+    }
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+</style>
+<style type="text/css">
+
+#apDiv3 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:3;
+	left: 26px;
+	top: 983px;
+}
+#apDiv4 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:4;
+	left: 602px;
+	top: 883px;
+}
+#apDiv5 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:5;
+	left: 566px;
+	top: 1083px;
+}
+#apDiv6 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:6;
+	left: 632px;
+	top: 1275px;
+}
+#apDiv7 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:7;
+	left: 850px;
+	top: 1451px;
+}
+#apDiv8 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:8;
+	left: 28px;
+	top: 1521px;
+}
+#apDiv9 {
+	position:absolute;
+	width:678px;
+	height:391px;
+	z-index:8;
+	left: -50px;
+	top: 1513px;
+}
+#apDiv10 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:9;
+	left: 422px;
+	top: 1651px;
+}
+#apDiv11 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:10;
+	left: 52px;
+	top: 1835px;
+}
+#apDiv12 {
+	position:absolute;
+	width:100px;
+	height:115px;
+	z-index:11;
+	left: 96px;
+	top: 1893px;
+}
+#apDiv13 {
+	position:absolute;
+	width:152px;
+	height:104px;
+	z-index:12;
+	left: 1092px;
+	top: 3274px;
+}
+#apDiv14 {
+	position:absolute;
+	width:131px;
+	height:100px;
+	z-index:13;
+	left: 973px;
+	top: 3278px;
+}
+#apDiv15 {
+	position:absolute;
+	width:110px;
+	height:108px;
+	z-index:14;
+	left: 865px;
+	top: 3272px;
+}
+#apDiv16 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:15;
+}
+#apDiv17 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:16;
+	left: 80px;
+	top: 2848px;
+}
+#apDiv18 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:17;
+	left: 296px;
+	top: 3028px;
+}
+
+</style>
+</head>
+
+<body>
+<div id="apDiv1"><img src="../IMAGENES/Diseño sin título (10).png" width="1300" /></div>
+<div id="apDiv2"><div class="slider-box">
+  <ul>
+<li> <a href="productos.html"><img src="../IMAGENES/maxresdefault (1).jpg" width="1300" height="520" /></a>
+<div class="texto">
+</li>
+<li> <a href="sembradios.html"><img src="../IMAGENES/CONOCE NUESTROS SEMBRADIOS.png" width="1300" height="520" /></a>
+<div class="texto">
+</div>
+</li>
+<li>
+<img src="../IMAGENES/nosotros.png"  width="1300" height="520" align="left" />
+<div class="texto">
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="apDiv3"><img src="../IMAGENES/jumexantesydespues-removebg-preview.png" width="573" height="436" /></div>
+<div id="apDiv4"><a href="https://fontmeme.com/garten-of-banban-font/"><img src="https://fontmeme.com/permalink/231202/73cb4bc73d794c099162111efd872fc0.png" alt="garten-of-banban-font" border="0"></a></div>
+<div id="apDiv5"><a href="https://fontmeme.com/fonts/dalmais-font/"><img src="https://fontmeme.com/permalink/231202/d19f9f98c082e2bdc05b754e08d616a2.png" alt="dalmais-font" border="0"></a></div>
+<div id="apDiv6"><img src="../IMAGENES/3-removebg-preview.png" width="666" height="375" /></div>
+<div id="apDiv7"><a href="HISTORIA.html"><img src="https://fontmeme.com/permalink/231202/972a3cbe6e2f4ab2490b810282167c62.png" alt="press-start-2p-font" border="0"></a></div>
+<div id="apDiv9"><a href="EMPRESA.html"><img src="../IMAGENES/3__1_-removebg-preview.png" width="582" height="331" border="0" /></a></div>
+<div id="apDiv10"><a href="EMPRESA.html"><img src="https://fontmeme.com/permalink/231202/2801999ad7b83dd60613d69252562430.png" alt="the-super-mario-bros-movie-font" border="0"></a></div>
+<div id="apDiv11"><img src="../IMAGENES/trabaja (1).png" width="1250" height="1600" /></div>
+<div id="apDiv12"><iframe width="1200" height="615" src="https://www.youtube.com/embed/IcPQZH6TFAY?si=Zz2Q9kMa-0_EGMsV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div id="apDiv13"><a href="https://www.instagram.com/jumex.oficial/?hl=es"><img src="../IMAGENES/insta-removebg-preview.png" width="110" height="100" /></a></div>
+<div id="apDiv14"><a href="https://twitter.com/oficialjumex?lang=es"><img src="../IMAGENES/twiter-removebg-preview.png" width="129" height="103" /></a></div>
+<div id="apDiv15"><a href="https://www.facebook.com/Jumex.Oficial/?locale=es_LA"><img src="../IMAGENES/face-removebg-preview.png" width="100" height="100" /></a></div>
+<div id="apDiv16">
+<div class="menu">
+  <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="close-outline"></ion-icon>
+</div>
+
+    <div class="barra-lateral">
+        <div>
+            <div class="nombre-pagina">
+              <ion-icon id="cloud" name="grid-outline"></ion-icon>
+                <span>JUMEX</span>
+            </div>
+        </div>
+
+        <nav class="navegacion">
+            <ul>
+                <li>
+                    <a id="inbox" href="formulario.html">
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                        <span>Formularios</span>
+                    </a>
+              </li>
+                <li>
+                    <a href="HISTORIA.html">
+                    <ion-icon name="earth-outline"></ion-icon>
+                        <span>Historia</span>
+                    </a>
+              </li>
+                <li>
+                    <a href="EMPRESA.html">
+                    <ion-icon name="business-outline"></ion-icon>
+
+                        <span>Empresa</span>
+                    </a>
+              </li>
+                <li>
+                    <a href="sembradios.html">
+                    <ion-icon name="leaf-outline"></ion-icon>
+                        <span>Sembradios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                        <span>Productos</span>
+                    </a>
+              </li>
+                <li>
+                    <a href="juego.html">
+                    <ion-icon name="game-controller-outline"></ion-icon>
+                        <span>Juegos</span>
+                    </a>
+              </li>
+                <li>
+                    <a href="http://jumex.com/mexico/">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <span>Pagina oficial</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <div class="linea"></div>
+
+            <div class="modo-oscuro">
+                <div class="info">
+                    <ion-icon name="moon-outline"></ion-icon>
+                    <span>Drak Mode</span>
+                </div>
+                <div class="switch">
+<div class="base">
+                        <div class="circulo">
+
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
+<script src="../scrpits/script.js"></script>
+<div id="apDiv17"><img src="../IMAGENES/3-removebg-preview.png" width="666" height="375" /></div>
+<div id="apDiv18"><a href="formulario.html"><img src="https://fontmeme.com/permalink/231202/972a3cbe6e2f4ab2490b810282167c62.png" alt="press-start-2p-font" border="0"></a></div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<style type="text/css">
+#apDiv1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 2px;
+	top: -5px;
+}
+#apDiv2 {
+	position:absolute;
+	width:723px;
+	height:1395px;
+	z-index:2;
+	left: 102px;
+	top: 359px;
+}
+</style>
+<link href="../CSS/form.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#apDiv3 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:3;
+	left: 214px;
+	top: 1607px;
+}
+#apDiv4 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:4;
+	left: 406px;
+	top: 1651px;
+}
+</style>
+</head>
+
+<body>
+<div id="apDiv1"><img src="../IMAGENES/contactanos.png" width="1308" height="2000" /></div>
+<div id="apDiv2">
+  <!-- Enlace al documento css. no aplicable en codepen.
+  <link rel="stylesheet" type="text/css" href="contact-form.css">
+-->
+  
+  </head>
+
+
+<body>  
+  
+  <!-- formulario de contacto en html y css -->  
+
+  <div class="contact_form">
+
+    <div class="formulario">      
+      <h1>Formulario de contacto</h1>
+        <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+
+
+          <form action="submeter-formulario.php" method="post">       
+
+            
+                <p>
+                  <label for="nombre" class="colocar_nombre">Nombre
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                </p>
+              
+                <p>
+                  <label for="email" class="colocar_email">Email
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                </p>
+            
+                <p>
+                  <label for="telefone" class="colocar_telefono">Teléfono
+                  </label>
+                    <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                </p>    
+              
+                <p>
+                  <label for="website" class="colocar_website">Sitio web
+                  </label>
+                    <input type="url" name="introducir_website" id="website" placeholder="Escribe la URL de tu web">
+                </p>    
+              
+                <p>
+                  <label for="asunto" class="colocar_asunto">Asunto
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
+                </p>    
+              
+                <p>
+                  <label for="mensaje" class="colocar_mensaje">Mensaje
+                    <span class="obligatorio">*</span>
+                  </label>                     
+                                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+            </p>                    
+              
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                <p class="aviso">
+                  <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>          
+            
+          </form>
+    </div>
+  </div>
+</div>
+<div id="apDiv3"><img src="../IMAGENES/3__2_-removebg-preview.png" width="870" height="167" /></div>
+<div id="apDiv4"><a href="PRINCIPAL.html"><img src="https://fontmeme.com/permalink/231129/236ba556b456b02fbcdde41b851ef395.png" alt="baby-blocks-font" border="0"></a></div>
+</body>
+</html>
